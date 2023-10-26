@@ -32,6 +32,8 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 5. Ejecuta el proyecto de Spring.
 6. Abre tu navegador y escribe `http://localhost:8008/home/index`.
 7. Escribe el username -> `admin` y password -> `admin`.
+8. Escribe `http://localhost:8008/api/profesores/all` para mostrar en JSON
+9. Mostrar un profesor `http://localhost:8008/api/profesores/{id_profesor}`
 
 ## Observaciones
 - La base de datos se encuenta en los archivos del proyecto (../resources/static/bbdd/bd_profesores).
