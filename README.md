@@ -1,4 +1,7 @@
-# T2 EXAMEN
+<div align="center">
+  <h2>T2 EXAMEN</h2>
+  <p>Desarrollo de examen DAW2.</p>
+</div>
 
 # Especificaciones
 Java: JDK 21
