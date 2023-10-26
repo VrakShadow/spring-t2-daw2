@@ -1,6 +1,6 @@
 # T2 EXAMEN
 
-#Especificaciones
+# Especificaciones
 Java: JDK 21
 Maven: 3.9.5
 MySQL: 8.0.34
