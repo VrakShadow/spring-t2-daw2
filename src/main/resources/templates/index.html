@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"></link>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body class="body">
+	
+	<div class="container">
+		<img class="img-logo" th:src="@{/img/logo.png}" />
+		<div class="info">
+			<h1 class="text-light">Profesores</h1>
+			<form th:action="@{/logout}" method="post">
+            	<button class="btn btn-danger" type="submit">Cerrar Sesión</button>
+    		</form>
+		</div>
+		
+		<div th:if="${profesores.isEmpty()}">No hay usuarios en la lista!</div>
+		<div class="div-table table-responsive-md">
+			<table class="table border mx-5">
+		        <thead class="table-primary">
+		            <tr>
+						<th class="text-center">Nombre</th>
+						<th class="text-center">DNI</th>
+						<th class="text-center">Especialidad</th>
+						<th class="text-center">Estado</th>
+						<th class="text-center">Ver</th>
+					</tr>
+		        </thead>
+		        <tbody class="table-light">
+		            <tr th:each="profesor: ${profesores}">
+						<td class="text-center" th:text="${profesor.nombre_profesor}"></td>
+						<td class="text-center" th:text="${profesor.dni_profesor}"></td>
+						<td class="text-center" th:text="${profesor.especialidad_profesor}"></td>
+						<td class="text-center" th:text="${profesor.estado_profesor}"></td>
+						<td sec:authorize="hasRole('ADMIN')"><a th:href="@{/home/profesor/} + ${profesor.id_profesor}">Ver Profesor</a></td>
+					</tr>
+		        </tbody>
+			</table>
+		</div>
+	</div>
+	
+</body>
+</html>

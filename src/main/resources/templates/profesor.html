@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title th:text="${titulo}"></title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"></link>
+	</head>
+	<body class="body">
+		<div th:if="${profesor.nombre_profesor != null}" class="container-profesor text-center">
+			
+			<label for="profesor_nombre" class="h3">Profesor</label>
+			<p id="profesor_nombre" th:text="${profesor.nombre_profesor}"></p>
+			
+			<label for="profesor_dni" class="h3">DNI</label>
+			<p id="profesor_dni" th:text="${profesor.dni_profesor}"></p>
+			
+			<label for="profesor_especialidad" class="h3">Especialidad</label>
+			<p id="profesor_especialidad" th:text="${profesor.especialidad_profesor}"></p>
+			
+			<label for="profesor_estado" class="h3">Estado</label>
+			<p id="profesor_estado" th:text="${profesor.estado_profesor}"></p>
+		</div>
+		
+		<div th:unless="${profesor.nombre_profesor != null}">No se encontró información del profesor</div>
+		<button id="btn-back" type="button" class="btn btn-primary btn-block btn-large" onclick="history.back()">Volver</button>
+		
+	</body>
+</html>
